@@ -1,4 +1,4 @@
-package com.fiap.semaforo_sql;
+package br.com.fiap.semaforo_sql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

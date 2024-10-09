@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-semaforo
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: db_semaforo
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+
+  app:
+    build: .
+    image: welderessutti/semaforo_sql
+    container_name: semaforo_sql-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      PROFILE: stg
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/db_semaforo
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: 1234
