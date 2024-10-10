@@ -1,11 +1,6 @@
-CREATE SEQUENCE sq_evento
-    INCREMENT BY 1
-    START WITH 1
-    MINVALUE 1;
-
 CREATE TABLE t_evento
 (
-    id             INTEGER DEFAULT nextval('sq_evento') PRIMARY KEY,
+    id             INTEGER      NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dt_hr_evento   TIMESTAMP    NOT NULL,
     tp_evento      VARCHAR(100) NOT NULL,
     loc_evento     VARCHAR(100) NOT NULL,

@@ -9,15 +9,7 @@ import lombok.Data;
 public class Semaforo {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sq_semaforo"
-    )
-    @SequenceGenerator(
-            name = "sq_semaforo",
-            sequenceName = "sq_semaforo",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "loc_instalacao")

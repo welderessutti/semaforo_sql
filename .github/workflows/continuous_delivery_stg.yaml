@@ -1,10 +1,8 @@
+name: Continuous Delivery Staging
+
 on:
   push:
-    branches: "main"
-
-env:
-  IMAGE_NAME: simple-api-java
-  AZURE_WEBAPP_NAME: simple-api-java
+    branches: "staging"
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:staging
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,4 +39,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: '${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest'
+          images: '${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:staging'

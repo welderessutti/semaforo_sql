@@ -11,15 +11,7 @@ import java.time.LocalDateTime;
 public class Evento {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sq_evento"
-    )
-    @SequenceGenerator(
-            name = "sq_evento",
-            sequenceName = "sq_evento",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "dt_hr_evento")

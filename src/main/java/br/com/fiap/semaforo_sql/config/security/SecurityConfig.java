@@ -48,10 +48,14 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/evento").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/evento/{id}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/evento").hasRole("ADMIN")
-//                        .requestMatchers("/h2-console/**").permitAll() para permitir acesso ao console do H2 DB
+                        .requestMatchers("/h2-console/**").permitAll() // para permitir acesso ao console do H2 DB
+                        .requestMatchers("/swagger-ui.html").permitAll() // Para permitir o acesso ao Swagger
+                        .requestMatchers("/swagger-ui/**").permitAll() // Para permitir o acesso ao Swagger
+                        .requestMatchers("/v3/api-docs/**").permitAll() // Para permitir o acesso aos documentos OpenAPI
+                        .requestMatchers("/swagger-resources/**").permitAll() // Para permitir o acesso aos recursos do Swagger
                         .anyRequest().authenticated()
                 )
-//                .headers(headers -> headers.frameOptions().sameOrigin()) para habilitar o console do H2 DB
+                .headers(headers -> headers.frameOptions().sameOrigin()) // para habilitar a renderizacao do console do H2 DB
                 .addFilterBefore(
                         verificarToken,
                         UsernamePasswordAuthenticationFilter.class

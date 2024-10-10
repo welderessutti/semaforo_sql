@@ -1,11 +1,6 @@
-CREATE SEQUENCE sq_leitura_sensor
-    INCREMENT BY 1
-    START WITH 1
-    MINVALUE 1;
-
 CREATE TABLE t_leitura_sensor
 (
-    id             INTEGER DEFAULT nextval('sq_leitura_sensor') PRIMARY KEY,
+    id             INTEGER          NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dt_hr_leitura  TIMESTAMP        NOT NULL,
     flx_veiculos   INTEGER          NOT NULL,
     vel_media      DOUBLE PRECISION NOT NULL,
