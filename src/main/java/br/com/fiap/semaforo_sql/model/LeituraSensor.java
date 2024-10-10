@@ -11,15 +11,7 @@ import java.time.LocalDateTime;
 public class LeituraSensor {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sq_leitura_sensor"
-    )
-    @SequenceGenerator(
-            name = "sq_leitura_sensor",
-            sequenceName = "sq_leitura_sensor",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "dt_hr_leitura")

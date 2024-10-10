@@ -1,11 +1,6 @@
-CREATE SEQUENCE sq_sensor
-    INCREMENT BY 1
-    START WITH 1
-    MINVALUE 1;
-
 CREATE TABLE t_sensor
 (
-    id             INTEGER DEFAULT nextval('sq_sensor') PRIMARY KEY,
+    id             INTEGER      NOT NULL AUTO_INCREMENT PRIMARY KEY,
     loc_instalacao VARCHAR(100) NOT NULL,
     tp_sensor      VARCHAR(100) NOT NULL,
     dd_tecnicos    VARCHAR(100) NOT NULL,

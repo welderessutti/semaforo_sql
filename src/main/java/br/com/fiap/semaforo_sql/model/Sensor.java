@@ -11,15 +11,7 @@ import java.time.LocalDate;
 public class Sensor {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sq_sensor"
-    )
-    @SequenceGenerator(
-            name = "sq_sensor",
-            sequenceName = "sq_sensor",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "loc_instalacao")
