@@ -52,7 +52,7 @@ do **production**, na cloud **Azure** utilizando **Web App**.
 
 ## Pré-requisitos
 
-- **Git** (caso queira clonar o repositório, mas você pode apenas baixa-lo):
+- **Git** (caso queira clonar o repositório, mas você pode apenas baixá-lo):
     - [Git](https://git-scm.com/downloads)
 - **Docker Desktop** (para executar a aplicação através de containers):
     - [Docker](https://www.docker.com/products/docker-desktop/)
@@ -79,18 +79,24 @@ Para executar a aplicação no ambiente **dev**, você deve executá-la diretame
 forma, a aplicação utilizará o banco de dados em memória **H2 Databse** e criará o banco de dados e as tabelas
 automaticamente.
 
-- **Dados de acesso ao H2**:
-    - **Driver Class**: org.h2.Driver
-    - **JDBC URL**: jdbc:h2:mem:db_semaforo
-    - **User Name**: sa
+A aplicação estará disponível para acesso em:
 
-**Deixar o campo **Password** vazio.*
+```
+http://localhost:8080/
+```
 
 Você pode acessar o banco de dados H2 pela **URL**:
 
 ```
 http://localhost:8080/h2-console
 ```
+
+- **Dados de acesso ao H2**:
+    - **Driver Class**: org.h2.Driver
+    - **JDBC URL**: jdbc:h2:mem:db_semaforo
+    - **User Name**: sa
+
+**Deixar o campo **Password** vazio.*
 
 #### Ambiente de Testes (staging):
 
